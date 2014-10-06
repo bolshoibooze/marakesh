@@ -1,0 +1,60 @@
+                  {% extends "mobile_core.html" %}
+                     {% load url from future %} 
+                     
+                         {% block menu %}
+                    
+                    
+		      <div class='top-menu'>
+        <a class="align-left" href="/accounts/index/">Home</a>
+           <a class="next current" href="/places/destination/">Places</a>
+           <a class="align-right" href="/accounts/faqs/">FAQs</a>
+		      </div>
+		          {% endblock %}
+
+
+
+                        {% block content %}
+          
+                    
+                        {% if place_list %}
+                 
+                       <div class=" common spaced">     
+                     {% for place in place_list %}
+                   
+                   
+                        <div class="paragraph">
+                
+                 <img class="main-Img"  src ="{{place.main_photo.url}}" /><br/>
+                            
+                 
+                       
+	               <div class="title">
+	       <a href="{% url 'detail' place.pk %}"> {{place.name}}</a>
+	               </div> 
+	    
+	     			<p>
+             		{{place.location}}
+             			</p>
+	               
+
+                     <p>{{place.description|safe|linebreaks}}</p>
+                        
+                    
+                
+                       <p>     
+         <a class="more-details" href="{% url 'detail' place.pk %}"> more details...</a>
+                       </p>
+                       
+                       </div>
+                      
+                        {% endfor %}
+       
+                            </div>
+      
+                            {% endif %}
+      
+
+     
+    
+               
+                            {% endblock %} 

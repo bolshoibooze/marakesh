@@ -1,0 +1,66 @@
+	           {% extends "mobile_core.html" %}
+                     {% load url from future %} 
+                     
+                         {% block menu %}
+                    
+                    
+		      <div class='top-menu'>
+        <a class="align-left" href="/accounts/index/">Home</a>
+           <a class="next current" href="/places/destination/">Places</a>
+           <a class="align-right" href="/accounts/faqs/">FAQs</a>
+		      </div>
+		          {% endblock %}
+
+
+
+                         {% block content %}
+                <div class="title"> {{place.name}} Details </div>
+                         <div class=" common spaced">
+                   
+                       
+                
+                 <img class="main-Img"  src ="{{place.main_photo.url}}" /><br/>
+                            
+                 
+                       
+	               
+	    
+	     			
+
+                     <p>{{place.full_description|safe|linebreaks}}</p>
+                     
+                     
+                     
+                     <div class="title"> Packages </div>
+                    <p>
+         {{place.packages.nights}} nights at K sh. {{place.packages.total_cost}}
+                    </p>
+                    
+                     <p>{{place.packages.description}}</p>
+                     
+                     
+                     
+                        
+                     <p>
+   <b>Status:</b> 
+   <span class="align-right">{{place.is_available|yesno:"Available,Booked"}}</span>
+   
+                     </p>
+                     
+                     <p>
+        <a class="more-details" href="/bookings/bookings/"> Make Booking</a>
+                       </p>
+                       
+                     <div class="title"> More Photos </div>
+              <img class="main-Img"  src ="{{place.photos.image.url}}" /><br/>
+              <img class="main-Img"  src ="{{place.photos.image_2.url}}" /><br/>
+              <img class="main-Img"  src ="{{place.photos.image_3.url}}" /><br/>
+              <img class="main-Img"  src ="{{place.photos.image_4.url}}" /><br/>
+                
+   <p> <a class="more-details" href="/bookings/bookings/"> Make Booking</a></p>
+                      
+                        </div>
+                     
+             
+                     
+                           {% endblock %}
