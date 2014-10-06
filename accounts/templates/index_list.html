@@ -1,0 +1,68 @@
+                          {% extends 'desktop_core.html' %}
+                          
+                          	{% block nav %}
+               		   <div class="nav center">
+               
+       		<ul>
+	
+		<li class="current"><a href="/accounts/index/">Home</a></li>
+		<li><a href="/places/destination/">Places</a></li>
+		<li><a href="/accounts/faqs/">FAQs</a></li>
+	
+	
+      		</ul>
+   	</div>
+                   		{% endblock %}
+                   		
+                   		
+                   		{% block content %}
+                   		<div class="pure-g-r">
+
+                               <div class="pure-u-1-2">
+                     
+                    
+                                 {% if about_list %}
+                           
+                              {% for about in about_list %}
+                             <div class="common spaced">
+                      <img class="main-Img home"  src ="{{about.main_photo.url}}" />
+                            <br/>
+                   		</div>
+                   		   </div>
+                   		   
+                   	<div class="pure-u-1-2">
+                   	<div class="common spaced">
+                   <div class="simple-title">What We Do </div>
+                
+                        <div class="paragraph">
+                       {{about.what_we_do|safe|linebreaks}}
+                           </div>
+                           
+                  <div class="simple-title">Who We Are </div>
+                
+                         <div class="paragraph">
+                         {{about.who_we_are|safe}}
+                           </div>
+                           
+                 <div class="simple-title">How It Works </div>
+                
+                         <div class="paragraph">
+                         {{about.how_it_works|safe|linebreaks}}
+                           </div>
+     
+             
+                          {% endfor %}
+       
+                             </div>
+                             
+                             
+                            {% endif %}
+      
+      
+ <a class="subscribe-btn" href="/places/destination/">View Places </a>
+     
+                              </div> 
+                   		  {% endblock %}
+                   		  
+                   		  
+                   		  

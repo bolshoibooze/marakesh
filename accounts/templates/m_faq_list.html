@@ -1,0 +1,39 @@
+                  {% extends "mobile_core.html" %}
+                     {% load url from future %} 
+                     
+                         {% block menu %}
+		      <div class='top-menu'>
+        <a class="align-left" href="/accounts/index/">Home</a>
+           <a class="next tab" href="/places/destination/">Places</a>
+           <a class="align-right current" href="/accounts/faqs/">FAQs</a>
+		      </div>
+		          {% endblock %}
+
+
+
+                        {% block content %}
+               <div class="title"> Frequently Asked Questions </div>
+                    
+                        {% if faq_list %}
+                           
+                     {% for faq in faq_list %}
+                    <div class=" common spaced">
+                   
+                        <div class="paragraph">
+                   <p><span class="faq-qstn">{{faq.qstn|safe}}</span></p>
+                 <p><span class="faq-answer">{{faq.answer|safe}}</span></p>
+                    
+                           </div>
+                           
+                 
+             
+                          {% endfor %}
+       
+                             </div>
+      
+                            {% endif %}
+      
+     
+     </div>
+               
+                            {% endblock %} 

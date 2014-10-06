@@ -1,0 +1,66 @@
+                  {% extends "mobile_core.html" %}
+                     {% load url from future %} 
+                     
+                         {% block menu %}
+		      <div class='top-menu'>
+        <a class="align-left current" href="/accounts/index/">Home</a>
+           <a class="next" href="/places/destination/">Places</a>
+           <a class="align-right" href="/accounts/faqs/">FAQs</a>
+		      </div>
+		          {% endblock %}
+
+
+
+                        {% block content %}
+          
+                    
+                        {% if about_list %}
+                           
+                   {% for about in about_list %}
+                    <div class=" common spaced">
+                   
+                     
+                    
+             <img class="main-Img"  src ="{{about.main_photo.url}}" />
+                       <br/>
+                      
+                      
+                      
+                <div class="simple-title">What We Do </div>
+                
+                        <div class="paragraph">
+                       {{about.what_we_do|safe|linebreaks}}
+                           </div>
+                           
+                  <div class="simple-title">Who We Are </div>
+                
+                         <div class="paragraph">
+                         {{about.who_we_are|safe}}
+                           </div>
+                           
+                 <div class="simple-title">How It Works </div>
+                
+                         <div class="paragraph">
+                         {{about.how_it_works|safe|linebreaks}}
+                           </div>
+     
+             
+                          {% endfor %}
+       
+                             </div>
+                             
+                             {% else %}
+      		<div class="paragraph distanced">
+      	
+       			No content posted yet<br/>
+       	       Lorem ipsum mumbo jambo for testing our awesome font
+       			    </div>
+      
+                            {% endif %}
+      
+      
+ <a class="subscribe-btn" href="/places/destination/">View Places </a>
+     
+     </div>
+               
+                            {% endblock %} 

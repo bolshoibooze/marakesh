@@ -1,0 +1,43 @@
+			{% extends 'desktop_core.html' %}
+                          
+                          	{% block nav %}
+               		   <div class="nav center">
+               
+       		<ul>
+	
+		<li><a href="/accounts/index/">Home</a></li>
+		<li><a href="/places/destination/">Places</a></li>
+		<li class="current"><a href="/accounts/faqs/">FAQs</a></li>
+	
+	
+      		</ul>
+   	    </div>
+                   		{% endblock %}
+                   		
+                   	      {% block content %}
+                   	    <div class="wide-section spaced">
+                 <div class="title"> Frequently Asked Questions </div>
+                    
+                            {% if faq_list %}
+                           
+                         {% for faq in faq_list %}
+                       
+                   
+                        <div class="paragraph">
+                   <p><span class="faq-qstn">{{faq.qstn|safe}}</span></p>
+                  <p><span class="faq-answer">{{faq.answer|safe}}</span></p>
+                    
+                           </div>
+                           
+                 
+             
+                             {% endfor %}
+      
+      
+                              {% endif %}
+      
+   
+     
+     </div>
+                   	      
+                   	         {% endblock %}
