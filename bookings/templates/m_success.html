@@ -1,0 +1,34 @@
+			 {% extends "mobile_core.html" %}
+                           {% load url from future %} 
+                     
+                               {% block menu %}
+                    
+                    
+		              <div class='top-menu'>
+        <a class="align-left" href="/accounts/index/">Home</a>
+           <a class="next current" href="/places/destination/">Places</a>
+           <a class="align-right" href="/accounts/faqs/">FAQs</a>
+		      </div>
+		                {% endblock %}
+
+
+
+                                {% block content %}
+                      <div class="title"> Booking </div>
+                      
+                     <p>
+                     You have successfully made a booking.<br/>
+                     We will call you shortly using one of the numbers below:
+                      </p>
+                      
+                      <div class="paragraph">           
+       <p>1.Charles <a href="tel:+254720905805" class="align-right"> 0720 905 805 </a></p>
+                      
+                      
+        <p>2.Arthur <a href="tel:+254706836320" class="align-right"> 0706 836 320 </a></p>
+                       </div>
+                      
+                                  {% endblock %}
+                                 
+                                 
+                                 
