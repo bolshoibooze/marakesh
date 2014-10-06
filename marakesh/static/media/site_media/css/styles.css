@@ -1,0 +1,185 @@
+/* mobile css */
+
+body {border: 2px;font-weight:200;background-color:#FFFFFF;
+font-size: 1em;line-height: 1.5;font-family: 'EB Garamond', serif;word-wrap: break-word;-webkit-text-size-adjust: none;}
+
+/*removes horizontal overflow on certain devices*/
+body div#wrap {width: 100%;overflow: hidden;position: absolute;left: 0;padding: 0;}
+
+/* logo styles */
+.logo {display: block;font-family: 'EB Garamond', serif;font-size: 1.3em;line-height: normal;color:#FF606E;margin-top:2px;font-weight:bolder;margin-bottom:8%;text-align:center;padding-bottom:10px;border-bottom:1px solid #eee;}/* #00CED1* or #F08080 */
+
+.home-nav {padding-bottom:5px;}
+.menu {font-weight:bolder;text-decoration:none;margin-left:2px;}
+.up {padding-left:35%}
+
+
+
+.top-menu {font-size:small;margin-bottom:6%;padding:2px;}
+.next{text-align:center;margin-left:30%;} 
+.current {border-bottom:2px solid #FF606E;}
+
+
+.notification {font-size:small;margin-bottom:2%;margin-left:2%;
+margin-right:2%;padding:5px;border-radius:5px;background-color:#eee;}
+
+.topcoat-notification {padding: 2px 5px 2px 5px ;border-radius: 2px;color: #fff;font-size:1em;line-height:normal;background-color: #ec514e;marging-bottom:2%;}/* 0.15em 0.5em 0.2em*/
+
+/* title styles */
+.title {padding: 2px;color:black;font-weight:normal;font-size: 1.4em;text-align: center;line-height: normal;margin-top:10px;margin-bottom:5px;
+border-top:1px solid #eee;border-bottom:1px solid #eee;}
+.simple-title {padding: 2px;color:black;font-weight:normal;font-size: 1.4em;text-align: center;line-height: normal;margin-top:10px;margin-bottom:2px;}
+.bottomed {border-bottom:1px solid #F08080;}
+
+
+/*sections */
+.main{color:black;margin-top:2%;font-weight:normal;}
+.common {border-radius:5px;margin-top:2%;margin-bottom:5%;padding:5px;}
+.dark-section {color:white;background-color:#4A4A4A;border:1px solid #4A4A4A;}
+.regular-section {color:black;border:2px solid #00DDD8;background-color:white;margin-bottom:3%;}
+.free-section {color:black;margin-top:3%;margin-bottom:5%;background-color:white;}
+.services {color:black;margin-top:2%;font-weight:normal;border-top:1px solid #eee;border-bottom:1px solid #eee;height:25%;}
+
+
+/* spacing */
+
+.spaced {margin-bottom:2%;}
+.distanced {margin-bottom:10%;}.l-space {margin-left:5%;}.mini-title {margin-left:20%;}.paragraphed {margin-bottom:5%;border-bottom:1px solid #eee;padding:5px;}
+.topped {border-top:2px solid #eee;}.item {margin-bottom:2%;background-color:#F5F5F5;padding:5px;}.linked {margin-left:2%;margin-right:2%;margin-bottom:3%;margin-top:3%;border-radius:5px;border:1px solid #eee;padding:5px;}
+.centered {margin-left:45%;} .extra-txt {font-size:smaller;}
+.custom-adjustment {margin-left:25%;} .notification-title {padding-bottom:5px;color:green;}
+.number {font-weight:bolder;color:black:padding:5px;font-size:larger;}
+.faq-answer {color:#262C3A;} .faq-qstn {}
+
+
+.well-spaced {margin-top:12%;margin-bottom:12%;}
+
+.menu-title {margin-top:5%;color:white;text-align:center;font-size:1.2em;font-weight:bolder;font-family:"Lucida Console", Monaco, monospace;}
+
+.paragraph {font-size:1em;line-height:normal;margin-top:1%;margin-bottom:2%;padding:5px;border-bottom:1px solid #eee;}
+
+.p {font-size:1em;line-height:normal;margin-top:1%;margin-bottom:2%;padding:5px;}
+.status {font-weight:400;}
+
+
+/* buttons */
+.menu-button{color: white; background-color: black;text-decoration:none;border:none;}
+
+.button {color:white;background-color:#00DDD8;border:none;border-radius:5px;
+width:90%;padding:5px;margin-bottom:5%;margin-left:5%;font-weight:bolder;}
+.button:hover{background-color:#18133a;padding-top: 4px;}
+
+.mini-btn {color:white;font-weight:bolder;background-color:#B22222;border-radius:5px;border:0 none;text-decoration:none;}
+
+.btn-danger {color:white;background-color:#B22222;border:none;border-radius:5px;
+width:90%;padding:5px;margin-bottom:5%;margin-top:10%;margin-left:13%;font-weight:bolder;}
+.btn-danger: link {color:white;text-decoration:none;}
+.btn-danger:hover{background-color:red;padding-top: 4px;}
+
+.action-call{padding:10px;margin-left:25%;margin-top:15%;margin-bottom:15%;font-size:large;font-weight:bolder;text-decoration:none;}
+.action-call:hover {border-radius:5px;border:1px solid #F08080;text-decoration:none;}
+
+.pretty-btn {padding:3px;margin-top:5%;font-weight:bolder;margin-bottom:10%;margin-left:20%;border-radius:5px;border:3px solid #F08080;  }
+
+.subscribe-btn {padding:3px;margin-top:5%;margin-left:30%;margin-right:15%;font-weight:bolder;font-size:1em;border-radius:5px;border:3px solid #F08080;}
+
+.more-details {padding:3px;margin-top:5%;margin-left:25%;margin-right:15%;font-weight:bolder;font-size:1em;border-radius:5px;border:3px solid #00DDD8;}
+
+.action-btn {color:white;background-color:#B22222;border:none;border-radius:5px;
+width:100%;padding:10px;margin-bottom:5%;margin-left:35%;}
+
+.btn-space{margin-left:5%;}
+
+/* images */
+.main-Img {height:100%;width:100%;border-radius:5px;}
+.thumb-Img {float: left;width: 28%;height:48%;margin: 0px 5px 3px 0px;}
+.detail-Img {float: center;height: 70%;width: 80%;padding-top: 1px;}
+.nav-Img {display:inline; height:10px;padding:2px;}
+.action-Img {float:right;display:inline; height:10px;}
+
+/* positioning */
+.align-right {float:right;}.align-left {float:left;}.centered {float:center;}.btn-space {margin-left:21%;}.reg-btn {line-height:normal;margin-left:33%;margin-top:5%;font-weight:bolder;}.back2top {text-align:center;margin-top:8%;margin-bottom:2%;margin-left:15%;margin-right:15%;padding:5px;background-color:#eee;border-radius:5px;}.date-format{text-align:center;}
+
+
+/* messages */
+.message {margin-top:3px;margin-bottom:3px;padding: 5px;
+background-color: #4A4A4A;border-radius:5px;}
+.message_info {background-color:#4A4A4A; }
+.msg-text {color: white;margin-left:10%; }
+.success-text {color:white;font-weight:bolder;}
+
+.message_error { background-color: #ffecec; }
+
+/* Link States */
+a:link {color: #0083ff;font-weight: bolder;text-decoration:none;}
+a:focus {background-color:red;text-decoration:none;}
+a:hover {border-radius:5px;border: 1px solid #F08080;padding: 4px;
+text-decoration:none;}
+a:visited {color:#7eccd4;text-decoration:none;}
+a:active {color:#990000;padding-top: 2px;text-decoration:none;}
+
+.links{margin:2%;line-height:normal;}
+
+/* Forms */
+.fieldWrapper{font-weight: normal;color:black;border: 0 none;
+margin: 0;font-size: normal;margin-bottom:5%;margin-top:5%;}
+.align-field {margin-left:5%}
+.select-field {background: transparent; width: 268px;padding: 5px;font-size:1em;line-height: 1;border: 0;border-radius: 0;height: 34px;-webkit-appearance: none;}
+.required {color: red;}
+.form {color:black;margin-top:5%;font-weight:normal;}
+
+body fieldset {margin: 0;padding: 0;border: none;float:center;}
+body form {margin: 0;color: #333333;width:100%;}
+body form label {font-size: .9em;margin-bottom: .5em;margin-top: .5em;}
+
+body form input[type='text'],body form input[type="password"]
+ {padding: 0.7em;margin-bottom: .5em;width:80%;line-height: 50px;
+display: block;border:2px solid #eee;background-color:white;font-weight:normal;
+margin-left:5%;}
+
+body form input[type='reset'],body form input[type='hidden'],
+{webkit-appearance: none; -moz-appearance: none;padding: 0.5em;margin-bottom: .5em;display: block;font-weight:normal;width:80%;background-color:white;
+border:2px solid #eee;margin-left:5%;}
+
+/* text|password|checkbox|radio|submit|reset|file|hidden|image|button */
+textarea {resize: vertical;}
+body textarea {webkit-appearance: none; -moz-appearance: none;padding: 1em;margin-bottom: .7em;display: block;width:80%;border:2px solid #eee;margin-left:5%;
+background-color:white;font-weight:normal;}
+
+body form input[type='radio'], body form input[type='checkbox'],
+body form input[type="image"],
+{margin:0.1em 0em;padding: 0;border:2px solid #eee;}
+body select {margin-bottom: 0;}
+body input[type='button'] {padding: 1em 1.3em;color: #666666;
+margin: 1em 0em;margin-left:13%}
+
+/* feedback */
+.feedback-message {color:white;padding:5px;background-color:black;}
+
+
+
+/* footer */
+.custom-footer {margin-top:10%;border-top:4px solid #eee;line-height:normal;
+margin-bottom:8%;clear:both;}
+
+.footer-item {font-size:x-small;margin-top:10%;text-align:center;text-decoration:none;}
+
+.bottom-menu {font-size:small;margin-bottom:6%;margin-top:10%;}
+.item-two {margin-left:20%;}
+
+.phone {margin-left:5%;} 
+.contacts {text-align:center;margin-bottom:14%;margin-top:15%;padding:5px;}
+.contacts-title {color:#FF606E;margin-bottom:2%;font-weight:bolder;} 
+
+.motto {margin-top:2%;margin-bottom:2%;text-align:center;}
+
+/*  mobile breakpoints:styles for basic devices */
+
+@media only all 
+and (orientation : landscape) {
+/* styles */
+}
+
+
+
+
