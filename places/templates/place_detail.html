@@ -32,12 +32,16 @@
                      
                      <div class="title"> Packages </div>
                      
+                        <div class="centered-content">
+                     
                     <p>
 {{place.packages.nights}} nights {{place.packages.price.category}} accomodation at K sh. {{place.packages.total_cost}} during the {{place.packages.price.season}}
 season
                     </p>
                     
-                     <p>{{place.packages.description}}</p>
+                     <p>{{place.packages.description|safe|linebreaks}}</p>
+                     
+                        </div>
                      
                      
                      
@@ -53,6 +57,8 @@ season
               <img class="main-Img"  src ="{{place.photos.image_2.url}}" /><br/>
               <img class="main-Img"  src ="{{place.photos.image_3.url}}" /><br/>
               <img class="main-Img"  src ="{{place.photos.image_4.url}}" /><br/>
+              <img class="main-Img"  src ="{{place.photos.image_5.url}}" /><br/>
+              <img class="main-Img"  src ="{{place.photos.image_6.url}}" /><br/>
                 
    <p> <a class="more-details" href="/bookings/bookings/"> Make Booking</a></p>
                       
