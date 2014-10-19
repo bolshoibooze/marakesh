@@ -17,10 +17,12 @@ urlpatterns = patterns('',
     
     url(r'^bookings/', include('bookings.urls')),
     
+    url(r'^packages/', include('packages.urls')),
+    
     url(r'^ua_detector/',include('ua_detector.urls')),
     
     url(r'^tinymce/', include('tinymce.urls')),
-    
+    #url(r'^admin/', include(admin_site.urls)),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )

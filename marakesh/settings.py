@@ -13,15 +13,16 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'test.sqlite3',                      
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'tours',
         # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'USER': 'siteadmin',
+        'PASSWORD': 'siteadmin_53$',
+        'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
 }
+
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -54,21 +55,23 @@ USE_TZ = True
 # Example: "/var/www/example.com/media/"
 MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'static/media/')
 
+
 #MEDIA_ROOT = '/root/marakesh/marakesh/static/media/'
 
 
 MEDIA_URL = '/static/media/'
 
 
-STATIC_ROOT = ''
-
+#STATIC_ROOT = '/root/marakesh/marakesh/static/'
+STATIC_ROOT = os.path.join(os.path.dirname(__file__),'static/')
 
 STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'static'),
+    #os.path.join(os.path.dirname(__file__), 'static'),
 )
+
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -78,6 +81,26 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
+#Cache Settings
+CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
+
+CACHE_MIDDLEWARE_SECONDS = 3600
+
+
+
+#default plus additional caches
+CACHES = {
+  'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+        'TIMEOUT':60,
+    }
+}
+
+USE_ETAGS = True
+DATE_INPUT_FORMATS = '%d-%m-%Y'
+
+
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'nvs9p3!9gysocf@mio&5s#mfe4g7os$ewfkrzc6efo-)w$7!gy'
 
@@ -85,7 +108,7 @@ SECRET_KEY = 'nvs9p3!9gysocf@mio&5s#mfe4g7os$ewfkrzc6efo-)w$7!gy'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    'django.template.loaders.eggs.Loader',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -146,6 +169,7 @@ INSTALLED_APPS = (
     'packages',
     'yawdadmin',
     'ua_detector',
+    
 )
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
@@ -170,6 +194,10 @@ CATEGORY = (
    ('Hotel','Hotel')
 )
 
+GENDER = (
+   ('Female','Female'),
+   ('Male','Male')
+)
 
 
 LOGGING = {
