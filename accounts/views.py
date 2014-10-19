@@ -14,6 +14,7 @@ from ua_detector.model_views import *
 from .models import *
 
 
+
 class IndexListView(ModelListView):
     model = About
     fields = (

@@ -51,7 +51,7 @@ class FaqAdmin(admin.ModelAdmin):
        }),
        
     )
-    list_display = ('is_public','date')
+    list_display = ('qstn','is_public','date')
     list_filter = ('is_public',)
     exclude = ('user',)
     

@@ -1,5 +1,6 @@
                   {% extends "mobile_core.html" %}
-                     {% load url from future %} 
+                     {% load url from future %}
+                     {% load core_tags %} 
                      
                          {% block menu %}
 		      <div class='top-menu'>
@@ -20,17 +21,17 @@
                     <div class=" common spaced">
                    
                      
-                    
-             <img class="main-Img"  src ="{{about.main_photo.url}}" />
-                       <br/>
-                      
-                      
-                      
-                <div class="simple-title">What We Do </div>
+                
+                      <img class="main-Img home"  src ="{{about.main_photo.url}}" />
+                            <br/>
+                   
+                              		
+                   <div class="title">What We Do </div>
                 
                         <div class="paragraph">
                        {{about.what_we_do|safe|linebreaks}}
                            </div>
+                           
                            
                   <div class="simple-title">Who We Are </div>
                 
@@ -38,11 +39,30 @@
                          {{about.who_we_are|safe}}
                            </div>
                            
-                 <div class="simple-title">How It Works </div>
+                 <div class="simple-title">Our Unique Packages</div>
                 
-                         <div class="paragraph">
-                         {{about.how_it_works|safe|linebreaks}}
-                           </div>
+                         
+                   <p>{{about.how_it_works|safe|linebreaks}}</p>
+                           
+                         
+                   {% for otherpackage in "packages.otherpackage"|latest:15 %}
+                        <div class="paragraph">
+                      <p>
+  <a class="package-title" href="{% url 'package_details' otherpackage.pk %}">{{ otherpackage.name|safe|title }}</a>
+                      </p>
+                      
+                    <p>{{ otherpackage.overview|safe|linebreaks }}<p>
+                    
+                      
+                         </div>
+                         
+                         
+                       
+                       {% endfor %}
+                       
+                          
+                           
+                        
      
              
                           {% endfor %}
@@ -62,5 +82,14 @@
  <a class="subscribe-btn" href="/places/destination/">View Places </a>
      
      </div>
+     
+                        
                
                             {% endblock %} 
+                            
+                            
+                            
+                            
+                            
+                            
+                            

@@ -1,5 +1,5 @@
-
-				                          {% extends 'desktop_core.html' %}
+                        {% extends 'desktop_core.html' %}
+                              {% load core_tags %} 
                           
                           	{% block nav %}
                		   <div class="nav center">
@@ -35,21 +35,38 @@
                         <div class="overlay-paragraph">
                        {{about.what_we_do|safe|linebreaks}}
                            </div>
+                            </h2>
+                                 </div>
                               
                            
-                  <div class="overlay-title">Who We Are </div>
-                
-                         <div class="overlay-paragraph">
-                         {{about.who_we_are|safe}}
-                           </div>
-                           </h2>
-                                 </div>
-                           
-                 <div class="simple-title">How It Works </div>
+                  <div class="simple-title">Who We Are </div>
                 
                          <div class="paragraph">
-                         {{about.how_it_works|safe|linebreaks}}
+                         {{about.who_we_are|safe}}
                            </div>
+                           
+ 
+                          
+                           
+                 <div class="simple-title">Our Unique Packages </div>
+                
+                         
+              <div class="paragraph">{{about.how_it_works|safe|linebreaks}}</div
+                          
+                      
+                        {% for otherpackage in "packages.otherpackage"|latest:15 %}
+                        <div class="paragraph">
+                      <p>
+  <a class="package-title" href="{% url 'package_details' otherpackage.pk %}">{{ otherpackage.name|safe|title }}</a>
+                      </p>
+                      
+                    <p>{{ otherpackage.overview|safe|linebreaks }}<p>
+                    
+                      
+                         </div>
+                       
+                       {% endfor %}
+                          
      
              
                           {% endfor %}
@@ -59,7 +76,8 @@
       
       
  <a class="subscribe-btn" href="/places/destination/">View Places </a>
-     
+ 
+                              
                               </div> 
                    		  {% endblock %}
                    		  

@@ -12,9 +12,6 @@ urlpatterns = patterns('accounts.views',
     url(r'^index/$', IndexListView.as_view(), 
         name='site_index'),
         
-    url(r'^faqs/$', FaqListView.as_view(), 
-        name='create_sub'),
-        
     url(r'^contacts/$',ContactView.as_view(),
         name='contact_us'),
         
