@@ -16,7 +16,7 @@ from tinymce.models import HTMLField
 from marakesh.settings import *
 
 #from places.models import Place
-
+from photos.models import *
 
 
 
@@ -158,6 +158,121 @@ class Package(models.Model):
               
     def save(self,*args,**kwargs):
         super(Package,self).save(*args,**kwargs)
+        
+        
+class OtherPackage(models.Model):
+    name = models.CharField(
+       max_length = 50,
+       verbose_name='Package Title'
+    )
+    cost = models.CharField(
+       max_length=50,null=True,blank=True,
+       verbose_name = 'Average Cost'
+    )
+    overview = HTMLField(
+       max_length=140,
+       verbose_name = 'Brief Overview',
+       help_text='140 words max'
+    )
+    details = HTMLField(
+       max_length=500,
+       verbose_name = 'Full Description',
+       help_text='500 words max'
+    )
+    photos = models.ManyToManyField(
+       PhotoAlbum,related_name='+',
+       verbose_name='Optional:Photos',
+       null=True,blank=True
+    )
+    activities = HTMLField(
+       max_length=500,
+       verbose_name = 'Activities'
+    )
+    user = models.ForeignKey(
+       settings.AUTH_USER_MODEL,
+       related_name='+'
+    )
+    date = models.DateTimeField(
+       auto_now_add=True
+    )
+    class Meta(object):
+        db_table = 'Other Package'
+        ordering = ['-date']
+        verbose_name_plural = 'Other Packages'
+        
+    def __unicode__(self):
+        return self.name 
+        
+    @permalink
+    def get_absolute_url(self):
+        return ('otherpackage',{'slug': self.slug})
+           
+    def save(self,*args,**kwargs):
+        super(OtherPackage,self).save(*args,**kwargs)
+        
+        
+
+        
+        
+
+class Participant(models.Model):
+    package = models.ForeignKey(
+       OtherPackage,related_name='+',
+       verbose_name='Select Package'
+    )
+    full_name = models.CharField(
+       max_length=50
+    )
+    gender =  models.CharField(
+       max_length=100,
+       choices = settings.GENDER,
+       verbose_name='Gender',  
+    )
+    phone_number = models.IntegerField(
+       verbose_name='Main Phone Number'
+    )
+    id_number = models.IntegerField(
+       verbose_name='Id Number'
+    )
+    is_attending = models.BooleanField(
+       default=False
+    )
+    status = models.BooleanField(
+       default=False,
+       verbose_name='Tick if sold out'
+    )
+    male_count = models.IntegerField(
+       default=0
+    )
+    female_count = models.IntegerField(
+       default=0
+    )
+    totals = models.IntegerField(
+       default=0
+    )
+    user = models.ForeignKey(
+       settings.AUTH_USER_MODEL,
+       related_name='+',null=True,
+       blank=True
+    )
+    date = models.DateTimeField(
+       auto_now_add=True
+    )
+    class Meta(object):
+        db_table = 'Participant'
+        ordering = ['-date']
+        verbose_name_plural='Participants'
+        
+    def __unicode__(self):
+        return smart_unicode(self.package)
+        
+        
+    def save(self,*args,**kwargs):
+        super(Participant,self).save(*args,**kwargs)
+    
+        
+        
+        
         
         
         

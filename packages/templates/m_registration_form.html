@@ -1,0 +1,44 @@
+                                 
+		  {% extends "mobile_core.html" %}
+                     {% load url from future %} 
+                     
+                         {% block menu %}
+                    
+                    
+		      <div class='top-menu'>
+        <a class="align-left current" href="/accounts/index/">Home</a>
+           <a class="next" href="/places/destination/">Places</a>
+           <a class="align-right" href="/accounts/faqs/">FAQs</a>
+		      </div>
+		          {% endblock %}
+
+
+
+                         {% block content %}
+                       <div class="simple-title"> Event Registration </div>
+                       
+                       {% if messages %}
+                  {% for message in messages %}
+      <div class="message  {% if message.tags %} message_{{ message.tags }}{% else %}message_info{% endif %}">
+   <span class="msg-text global_styles">{{ message }}</span>
+      </div>
+                        {% endfor %}
+                         {% endif %}
+
+      <div class="regular-section common distanced">
+  
+       <form   action="." method="post" >{% csrf_token %}
+
+                  {{form.non_field_errors }}
+
+                        <fieldset>
+
+                {% include "base_regform.html" %}
+
+  <input class="button" name="post" value="Submit" type="submit"/>
+
+                        </fieldset>
+                      </form>
+                    </div>
+ 
+                      {% endblock %}

@@ -1,0 +1,33 @@
+                            {% extends 'desktop_core.html' %}
+                          
+                          	{% block nav %}
+               		   <div class="nav center">
+               
+       		<ul>
+	
+		<li class="current"><a href="/accounts/index/">Home</a></li>
+		<li><a href="/places/destination/">Places</a></li>
+		<li><a href="/accounts/faqs/">FAQs</a></li>
+	
+	
+      		</ul>
+   	    </div>
+                   		{% endblock %}
+                   		
+                   	       {% block content %}
+                   	   <div class="wide-section spaced">
+                   <div class="title"> {{otherpackage.name}} Details </div>
+                   
+                       
+              <div class="paragraph">{{ otherpackage.details|safe|linebreaks}} </div>
+              
+              
+                        
+                        <div class="simple-title"> Activities </div>
+                       
+              <div class="paragraph">{{ otherpackage.activities|safe|linebreaks}} </div>
+              
+           
+             
+             
+                                 {% endblock %}

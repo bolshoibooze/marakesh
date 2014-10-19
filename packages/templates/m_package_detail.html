@@ -1,0 +1,35 @@
+                       {% extends "mobile_core.html" %}
+                          {% load url from future %} 
+                     
+                             {% block menu %}
+                    
+                    
+		      <div class='top-menu'>
+        <a class="align-left current" href="/accounts/index/">Home</a>
+           <a class="next" href="/places/destination/">Places</a>
+           <a class="align-right" href="/accounts/faqs/">FAQs</a>
+		      </div>
+		          {% endblock %}
+
+
+
+                            {% block content %}
+                <div class="title"> {{otherpackage.name}}</div>
+                         <div class=" common spaced">
+                         
+                       <div class="simple-title"> Details </div>
+                       
+              <div class="paragraph">{{ otherpackage.details|safe|linebreaks}} </div>
+              
+              
+                        
+                        <div class="simple-title"> Activities </div>
+                       
+              <div class="paragraph">{{ otherpackage.activities|safe|linebreaks}} </div>
+              
+              
+             
+                       
+                        
+                        
+                            {% endblock %}

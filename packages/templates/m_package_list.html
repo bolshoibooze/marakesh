@@ -1,0 +1,22 @@
+
+
+                        {% if otherpackage_list %}
+                        
+                   {% for otherpackage in otherpackage_list %}
+                           <div class="paragraph">
+                      <p>
+                  <span class="package-title">{{ otherpackage.name|safe|title }}</span>
+                      </p>
+                      
+                    <p>{{ otherpackage.overview|safe|linebreaks }}<p>
+                    
+                      <p>     
+ <a class="more-details" href="{% url 'package_details' otherpackage.pk %}"> more details...</a>
+                       </p>
+                         </div>
+                       
+                       {% endfor %}
+       
+                            
+      
+                            {% endif %}
